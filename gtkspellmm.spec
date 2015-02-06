@@ -6,7 +6,7 @@
 Summary:	On-the-fly spell checking for GtkTextView widgets - C++ bindings
 Name:		gtkspellmm
 Version:	3.0.1
-Release:	1
+Release:	2
 License:	GPLv2+
 Group:		System/Libraries
 Url:		http://gtkspell.sourceforge.net/
