@@ -2,11 +2,12 @@
 %define major 0
 %define libname %mklibname %{name} %{api} %{major}
 %define devname %mklibname %{name} %{api} -d
+%define	_disable_rebuild_configure %nil
 
 Summary:	On-the-fly spell checking for GtkTextView widgets - C++ bindings
 Name:		gtkspellmm
-Version:	3.0.1
-Release:	2
+Version:	3.0.4
+Release:	1
 License:	GPLv2+
 Group:		System/Libraries
 Url:		http://gtkspell.sourceforge.net/
@@ -61,7 +62,10 @@ applications which use GtkSpell.
 %setup -q
 
 %build
-%configure2_5x
+export CFLAGS="%optflags -std=c++11"
+export CXXFLAGS="%optflags -std=c++11"
+
+%configure
 %make
 
 %install
