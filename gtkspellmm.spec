@@ -6,12 +6,12 @@
 
 Summary:	On-the-fly spell checking for GtkTextView widgets - C++ bindings
 Name:		gtkspellmm
-Version:	3.0.4
+Version:	3.0.5
 Release:	1
 License:	GPLv2+
 Group:		System/Libraries
-Url:		http://gtkspell.sourceforge.net/
-Source0:	http://sourceforge.net/projects/gtkspell/files/gtkspellmm/%{name}-%{version}.tar.gz
+Url:		https://gtkspell.sourceforge.net/
+Source0:	https://download.sourceforge.net/gtkspell/%{name}-%{version}.tar.xz
 BuildRequires:	pkgconfig(gtkmm-3.0)
 BuildRequires:	pkgconfig(gtkspell3-3.0)
 
@@ -48,7 +48,7 @@ This package provides header and documentation files for developing C++
 applications which use GtkSpell.
 
 %files -n %{devname}
-%doc COPYING
+%license COPYING
 %{_includedir}/gtkspellmm-%{api}
 %{_libdir}/lib%{name}-%{api}.so
 %{_libdir}/pkgconfig/gtkspellmm-%{api}.pc
@@ -59,15 +59,15 @@ applications which use GtkSpell.
 #----------------------------------------------------------------------------
 
 %prep
-%setup -q
+%autosetup -p1
 
 %build
 export CFLAGS="%optflags -std=c++11"
 export CXXFLAGS="%optflags -std=c++11"
 
 %configure
-%make
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 
