@@ -12,6 +12,11 @@ License:	GPLv2+
 Group:		System/Libraries
 Url:		https://gtkspell.sourceforge.net/
 Source0:	https://download.sourceforge.net/gtkspell/%{name}-%{version}.tar.xz
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	pkgconfig(gtkmm-3.0)
 BuildRequires:	pkgconfig(gtkspell3-3.0)
 
